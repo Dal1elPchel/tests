@@ -1,0 +1,227 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 32px;
+
+    background: #171717;
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   Gallery
+========================= */
+
+.gallery {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+            transform .25s ease,
+            filter .25s ease,
+            box-shadow .25s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.025);
+
+    filter: brightness(1.08);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+
+/* =========================
+   Lightbox
+========================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .9);
+
+    transition:
+            opacity .25s ease,
+            visibility .25s ease;
+}
+
+.lightbox.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================
+   Image container
+========================= */
+
+.lightbox__inner {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox__image {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+            background .2s ease,
+            transform .2s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, .2);
+    transform: scale(1.08);
+}
+
+.btn:active {
+    transform: scale(.94);
+}
+
+.btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   Close
+========================= */
+
+.lightbox__close {
+    top: 24px;
+    right: 24px;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+.lightbox__back {
+    left: 30px;
+}
+
+.lightbox__next {
+    right: 30px;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 16px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .lightbox__close {
+        top: 16px;
+        right: 16px;
+    }
+
+    .lightbox__back {
+        left: 12px;
+    }
+
+    .lightbox__next {
+        right: 12px;
+    }
+
+    .btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .lightbox__image {
+        max-width: 85vw;
+        max-height: 85vh;
+    }
+}
