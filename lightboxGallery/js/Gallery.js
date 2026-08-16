@@ -20,7 +20,7 @@ export class Gallery {
                 return 0;
             }
 
-            slider.setCurrentIndex(Number(e.target.dataset.index));
+            slider.openLightBox(Number(e.target.dataset.index));
         });
     }
 }
