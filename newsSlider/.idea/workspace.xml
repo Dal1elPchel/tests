@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cb41468-9b82-41b1-9f1c-0cd2eaa5530b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../lightboxGallery/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lightboxGallery/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lightboxGallery/js/Gallery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lightboxGallery/js/Lightbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lightboxGallery/js/Slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lightboxGallery/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lightboxGallery/js/Downloader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lightboxGallery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lightboxGallery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lightboxGallery/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lightboxGallery/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lightboxGallery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../lightboxGallery/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lightboxGallery/js/Lightbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lightboxGallery/js/Lightbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lightboxGallery/js/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lightboxGallery/js/Slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lightboxGallery/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../lightboxGallery/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +99,7 @@
       <workItem from="1786348020575" duration="12424000" />
       <workItem from="1786523303533" duration="270000" />
       <workItem from="1786620107879" duration="54000" />
+      <workItem from="1786903471657" duration="27000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 import {Gallery} from "./js/Gallery.js";
 import {Lightbox} from "./js/Lightbox.js";
 import {Slider} from "./js/Slider.js";
+import {Downloader} from "./js/Downloader.js";
 
 const GALLERY_LIST = []
 
@@ -14,5 +15,6 @@ const gallery = new Gallery(GALLERY_LIST);
 
 const slider = new Slider(GALLERY_LIST, lightbox);
 
+const downloader = new Downloader(slider);
 gallery.render();
 gallery.bindEvents(slider);

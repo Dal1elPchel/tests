@@ -1,7 +1,6 @@
 export class Lightbox {
     constructor() {
         this.$lightbox = document.querySelector('.lightbox');
-        this.$inner = document.querySelector('.lightbox__inner');
         this.$lightboxTrack  = document.querySelector('.lightbox__track');
         this.$images = this.$lightboxTrack.querySelectorAll(".lightbox__image");
         this.$closeBtn = document.querySelector('.lightbox__close');
@@ -21,18 +20,20 @@ export class Lightbox {
 
     close() {
         this.$lightbox.classList.add('hidden');
+        this.resetTrack();
     }
 
     listenPointerDown(action) {
-        this.$lightboxTrack.addEventListener('pointerdown', action);
+        this.$lightboxTrack.addEventListener('touchstart', action);
     }
 
     listenPointerUp(action) {
-        this.$lightboxTrack.addEventListener('pointerup', action);
+        this.$lightboxTrack.addEventListener('touchend', action);
+        this.$lightboxTrack.addEventListener('touchcancel', action);
     }
 
     listenPointerMove(action) {
-        this.$lightboxTrack.addEventListener('pointermove', action);
+        this.$lightboxTrack.addEventListener('touchmove', action);
     }
 
     animate(direction) {
@@ -51,7 +52,7 @@ export class Lightbox {
 
     resetTrack (withTransition = false) {
         if (!withTransition) this.setTransition("none");
-        this.$lightboxTrack.style.transform = "translateX(-33.3333%)";
+        this.$lightboxTrack.style.transform = "translateX(-33.3333%) translateY(0)";
         this.$lightboxTrack.offsetHeight;
 
         this.setTransition('transform .2s ease-in-out');
@@ -67,7 +68,7 @@ export class Lightbox {
     }
 
     moveY(offset) {
-        this.$lightboxTrack.style.transform = `translateY(${offset}px)`;
+        this.$lightboxTrack.style.transform = `translateX(-33.3333%) translateY(${offset}px)`;
     }
 
     bindEvents() {

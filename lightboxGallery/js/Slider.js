@@ -11,6 +11,10 @@ export class Slider {
         this.bindEvents();
     }
 
+    getCurrentPhoto() {
+        return this.photoList[this.currentIndex];
+    }
+
     openLightBox(index) {
         this.setCurrentIndex(index);
         this.lightbox.show();
@@ -87,17 +91,43 @@ export class Slider {
             }
         });
         this.lightbox.listenPointerDown((e) => {
-            this.startX = e.clientX;
-            this.startY = e.clientY;
+            this.startX = e.changedTouches[0].clientX;
+            this.startY = e.changedTouches[0].clientY;
+            this.direction = null;
         });
         this.lightbox.listenPointerMove((e) => {
-            let distance = e.clientX - this.startX;
-            this.lightbox.setTransition("none");
-            this.lightbox.moveX(distance);
+            const deltaX = e.changedTouches[0].clientX - this.startX;
+            const deltaY = e.changedTouches[0].clientY - this.startY;
+
+            if (!this.direction) {
+                if (Math.abs(deltaX) < 20 && Math.abs(deltaY) < 20) return;
+
+                this.direction = Math.abs(deltaX) > Math.abs(deltaY) ? "X" : "Y";
+            }
+
+            if (this.direction === "X") {
+                this.lightbox.setTransition("none");
+                this.lightbox.moveX(deltaX);
+            }
+            else {
+                this.lightbox.setTransition("none");
+                this.lightbox.moveY(deltaY);
+            }
         });
         this.lightbox.listenPointerUp((e) => {
+            if (this.direction === "Y") {
+                const distance = this.startY - e.changedTouches[0].clientY;
+                if (Math.abs(distance) < 150) {
+                    this.lightbox.resetTrack(true);
+                    return;
+                }
+                this.lightbox.close();
+
+                return;
+            }
+
             this.lightbox.setTransition("transform .2s ease-in-out");
-            const distance = this.startX - e.clientX;
+            const distance = this.startX - e.changedTouches[0].clientX;
             if (Math.abs(distance) < 70) {
                 this.lightbox.resetTrack(true);
                 return;

@@ -185,6 +185,13 @@ body {
     font-size: 18px;
 }
 
+.lightbox__download {
+    top: 24px;
+    right: 84px;
+
+    font-size: 18px;
+}
+
 
 /* =========================
    Navigation
