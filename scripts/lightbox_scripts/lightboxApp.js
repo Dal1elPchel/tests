@@ -6,7 +6,7 @@ import {Downloader} from "./Downloader.js";
 const GALLERY_LIST = []
 
 for (let i = 1; i <= 15; i++) {
-    GALLERY_LIST.push(`/tests/assets/lightbox/${i}.jpg`);
+    GALLERY_LIST.push(`../assets/lightbox/${i}.jpg`);
 }
 
 const lightboxApp = new Lightbox();
