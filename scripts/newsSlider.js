@@ -3,7 +3,9 @@ class Slider {
     constructor(state) {
         this.state = {
             ...state,
-            images: state.images || ["assets/1.png", "assets/2.png", "assets/3.png"],
+            images: state.images || ["../assets/newsSlider/1.png",
+                "../assets/newsSlider/2.png",
+                "../assets/newsSlider/3.png"],
             currentIndex: state.currentIndex || 0
         }
         this.isAnimating = false;

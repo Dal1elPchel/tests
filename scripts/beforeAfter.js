@@ -7,7 +7,7 @@ function getTemplate(state) {
     `;
 }
 
-class Slider {
+class BeforeAfter {
     constructor(selector, state) {
         this.$slider = document.getElementById(selector);
         this.state = {
@@ -58,4 +58,4 @@ class Slider {
     }
 }
 
-const slider = new Slider("slider", {});
+const slider = new BeforeAfter("slider", {});

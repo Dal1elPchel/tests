@@ -26,14 +26,14 @@ body {
     width: 797px;
     height: 320px;
     z-index: 2;
-    background: url("assets/forest1.png") no-repeat center center fixed;
+    background: url("../assets/beforeAfter/before.png") no-repeat center center fixed;
 }
 
 .slider__after {
     position: absolute;
     width: 797px;
     height: 320px;
-    background: url("assets/forest2.png") no-repeat center center fixed;
+    background: url("../assets/beforeAfter/after.png") no-repeat center center fixed;
 }
 
 .slider__resize {

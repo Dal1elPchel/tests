@@ -1,6 +1,6 @@
 export class Lightbox {
     constructor() {
-        this.$lightbox = document.querySelector('.lightbox');
+        this.$lightbox = document.querySelector('.lightboxApp');
         this.$lightboxTrack  = document.querySelector('.lightbox__track');
         this.$images = this.$lightboxTrack.querySelectorAll(".lightbox__image");
         this.$closeBtn = document.querySelector('.lightbox__close');
